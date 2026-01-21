@@ -1,3 +1,5 @@
 idf_component_register(SRCS "main.cpp"
+                            "comp/slider/Slider.cpp"
+                            "comp/wifi/WifiManager.cpp"
                        INCLUDE_DIRS "."
-                       REQUIRES slider)
+                       REQUIRES esp_wifi esp_adc)

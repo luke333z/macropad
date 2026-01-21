@@ -14,7 +14,7 @@ Slider::Slider(adc_channel_t channel) : m_Channel{ channel }
 
 	adc_oneshot_chan_cfg_t config = 
 	{
-		.atten = ADC_ATTEN_DB_2_5,
+		.atten = ADC_ATTEN_DB_12,
 		.bitwidth = ADC_BITWIDTH_10
 	};
 

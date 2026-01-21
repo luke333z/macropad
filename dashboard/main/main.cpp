@@ -1,7 +1,8 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 
-#include "Slider.h"
+#include "comp/slider/Slider.h"
+#include "comp/wifi/WifiManager.h"
 
 
 static void Delay(uint32_t ms)
@@ -12,16 +13,13 @@ static void Delay(uint32_t ms)
 
 extern "C" void app_main(void)
 {
-	Slider slider{ ADC_CHANNEL_0 };
+	WifiManager::Init();
 
-	static_assert(sizeof(short) == 2);
-	static_assert(sizeof(uint32_t) == 4);
-	static_assert(sizeof(long) == 4);
-	static_assert(sizeof(long long) == 8);
+	WifiManager::Connect("", "");
 
 	while (true)
 	{
-		printf("%i", (int)slider.GetRaw());
-		Delay(200);
+		Delay(1000);
 	}
+	
 }

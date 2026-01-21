@@ -1,3 +1,5 @@
+#pragma once
+
 #include <esp_adc/adc_oneshot.h>
 
 class Slider
@@ -13,5 +15,5 @@ public:
 private:
 	adc_channel_t m_Channel;
 
-	inline static adc_oneshot_unit_handle_t s_ADCUnitHandle = 0;
+	inline static adc_oneshot_unit_handle_t s_ADCUnitHandle{};
 };
